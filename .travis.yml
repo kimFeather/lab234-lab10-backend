@@ -14,8 +14,10 @@ install:
 - docker push kuribohw/se234-lab10-backend
 - docker pull kuribohw/se234-lab10-client
 script:
-- docker-compose --version
-- docker-compose -H "$DOCKER_HOST" up -d
+- docker-compose -H "$HOST_NAME" stop
+- docker-compose -H "$HOST_NAME" rm -f
+- docker-compose -H "$HOST_NAME" pull
+- docker-compose -H "$HOST_NAME" up -d
 cache:
   directories:
   - "$HOME/.m2"
