@@ -22,4 +22,6 @@ public class GradeServiceImpl implements GradeService {
         return g;
 
     }
+    public String getGrade(double midtermScore,double finalScore) {return null;}
+
 }
